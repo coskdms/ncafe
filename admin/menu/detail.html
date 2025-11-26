@@ -1,141 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <!-- header -->
+    <!-- === header ===================== -->
     <header>
+        <h1><a href="/index.html">NCafe</a></h1>
         <div>
-            <h1>NCafe</h1>
-            <div>공유</div>
+            <button>공유</button>
         </div>
     </header>
-    <!-- main -->
+    <!-- === main ===================== -->
     <main>
         <section>
-            <!-- 등록된 메뉴 제목 -->
-            <div>
-                <button type="button" aria-label="메뉴 목록으로 돌아가기">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </button>
-                <h1>등록된 메뉴</h1>
-                <span aria-hidden="true"></span>
-            </div>
-            <!-- 등록된 메뉴 컨텐츠 -->
-            <div>
-                <section>
-                    <h1>메뉴 정보</h1>
-                    <div>
-                        <section>
-                            <h1>메뉴 이미지</h1>
-                            <ul>
-                                <li><img src="https://www.figma.com/api/mcp/asset/f75ed383-29c9-460b-97c1-191e70df5759" alt="따뜻한 아메리카노"></li>
-                                <li><img src="https://www.figma.com/api/mcp/asset/73e08898-491b-41b6-9dde-b7a9e80cb368" alt="아이스 아메리카노"></li>
-                            </ul>
-                        </section>
-                        <article>
-                            <h1>아메리카노</h1>
-                            <dl>
-                                <dt>한글명</dt>
-                                <dd>아메리카노</dd>
+            <h1>메뉴 등록</h1>
+            <form id="menu-form" method="post" action="create.php">
+                <div>
+                    <label>
+                        메뉴 이미지 <input type="file">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        한글명 <span>*</span>
+                        <input type="text" name="kor-name" required placeholder="한글명을 입력하세요." minlength="2"
+                            maxlength="8" autocomplete="off" title="예)아메리카노" pattern="^[가-힣]+$" autofocus>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        영문명 <input type="text" name="eng-name" placeholder="영문명을 입력하세요." pattern="^[a-zA-Z]+$"
+                            title="예)Americano">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        카테고리 <span>*</span>
+                        <select name="category-id" required>
+                            <option value="">선택해주세요.</option>
+                            <option value="1">커피</option>
+                            <option value="2">논커피</option>
+                            <option value="3">티/차</option>
+                            <option value="4">에이드</option>
+                            <option value="5">주스/스무디</option>
+                            <option value="6">아이스크림</option>
+                            <option value="7">베이커리</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        가격 <span>*</span>
+                        <input type="number" name="price" required placeholder="가격을 입력하세요." min="100" max="10000">
+                    </label>
+                </div>
 
-                                <dt>영문명</dt>
-                                <dd>Americano</dd>
+                <div>
+                    <label>
+                        설명
+                        <textarea cols="60" rows="10" name="description" placeholder="메뉴 설명을 입력하세요."></textarea>
+                    </label>
+                </div>
 
-                                <dt>카테고리</dt>
-                                <dd>커피</dd>
+                <div>
+                    <label>
+                        <input type="checkbox" name="is-sellable">
+                        판매가능
+                    </label>
+                </div>
 
-                                <dt>옵션</dt>
-                                <dd>판매중</dd>
+                <div>
+                    <label>
+                        <input type="checkbox" name="is-hot">
+                        Hot
+                    </label>
+                </div>
 
-                                <dt>가격</dt>
-                                <dd>4500</dd>
-
-                                <dt>설명</dt>
-                                <dd>깊고 진한 에스프레소에 뜨거운 물을 더한 클래식 커피</dd>
-
-                                <dt>등록일</dt>
-                                <dd>2025. 11. 18.</dd>
-                                <dt>수정일</dt>
-                                <dd>2025. 11. 18.</dd>
-                            </dl>
-                        </article>
-                        <!-- <div>
-                            <img src="https://www.figma.com/api/mcp/asset/f75ed383-29c9-460b-97c1-191e70df5759" alt="따뜻한 아메리카노">
-                        </div>
-                        <div>
-                            <img src="https://www.figma.com/api/mcp/asset/73e08898-491b-41b6-9dde-b7a9e80cb368" alt="아이스 아메리카노">
-                        </div> -->
-                        <!-- <div>
-                            <p>아메리카노</p>
-                            <p>Americano</p>
-                        </div>
-                        <div>
-                            <span>커피</span>
-                            <span>판매중</span>
-                        </div>
-                        <div>
-                            <p>가격</p>
-                            <p>4,500원</p>
-                        </div>
-                        <div>
-                            <p>설명</p>
-                            <p>깊고 진한 에스프레소에 뜨거운 물을 더한 클래식 커피</p>
-                        </div>
-                        <div>
-                            <p>등록일: 2025. 11. 18.</p>
-                            <p>수정일: 2025. 11. 18.</p>
-                        </div> -->
-                    </div>
-                </section>
-                <section>
-                    <h1>관리 작업</h1>
-                    <div>
-                        <button type="button">수정</button>
-                        <button type="button">삭제</button>
-                    </div>
-                </section>
-            </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="is-ice">
+                        Iced
+                    </label>
+                </div>
+                <div>
+                    <button>저장</button>
+                    <button type="button" onclick="location.href='list.html'">취소</button>
+                </div>
+            </form>
         </section>
     </main>
-    <aside>
+    <!-- === nav ==================== -->
+    <nav>
         <h1>바로가기 메뉴</h1>
         <ul>
-            <li><a href="index.html">대시보드</a></li>
-            <li><a href="list.html">메뉴목록</a></li>
-            <li><a href="create.html">메뉴추가</a></li>
+            <li><a href="/admin/index.html">대시보드</a></li>
+            <li><a href="/admin/menu/list.html">메뉴목록</a></li>
+            <li><a href="/admin/menu/create.html">메뉴추가</a></li>
         </ul>
-    </aside>
-    <!-- footer -->
+    </nav>
+    <!-- === footer ==================== -->
     <footer>
         <section>
             <h1>사이트 정보</h1>
-            <section>
-                <h1>회사 정보</h1>
-                <dl>
-                    <dt>상호</dt>
-                    <dd>뉴카페</dd>
-                    <dt>사업자등록번호</dt>
-                    <dd>111-222222-11</dd>
-                    <dt>대표</dt>
-                    <dd>뉴렉처</dd>
-                </dl>
-                <h1>연락처</h1>
-                <dl>
-                    <dt>주소</dt>
-                    <dd>서울시 마포구 백범로...</dd>
-                    <dt>전화</dt>
-                    <dd>02-111-333</dd>
-                    <dt>이메일</dt>
-                    <dd>help@ncafe.com</dd>
-                </dl>
-            </section>
+            <div>
+                <section>
+                    <h1>회사정보</h1>
+                    <dl>
+                        <dt>상호</dt>
+                        <dd>뉴카페</dd>
+                        <dt>업자등록번호</dt>
+                        <dd>111-222222-11</dd>
+                        <dt>대표</dt>
+                        <dd>뉴렉처</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h1>연락처</h1>
+                    <dl>
+                        <dt>주소</dt>
+                        <dd>서울시 마포구 백범로...</dd>
+                        <dt>전화</dt>
+                        <dd>02-111-333</dd>
+                        <dt>이메일</dt>
+                        <dd>help@ncafe.com</dd>
+                    </dl>
+                </section>
+            </div>
         </section>
     </footer>
 </body>
+
 </html>

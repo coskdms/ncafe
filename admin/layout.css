@@ -1,0 +1,111 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    background-color: #f8f8f8;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header, main {
+    /* background-image: url(../image/우주배경.jpg), url(../image/사계절배경.avif); */
+    /* 배경 하나만 나오게 -> no-repeat */
+    /* background-repeat: no-repeat;
+    background-size: contain, cover;
+    background-position: center; */
+
+    /* position 빼고 한꺼번에 쓸수있음 순서는 없음 걍 쓰는대로 쓸수있음 
+        size는 / 쓰고 넣으면 가능
+    */
+    background: url(../image/우주배경.jpg) no-repeat center center/contain;
+    /* background-size: contain; */
+    background-position: center bottom;
+
+    /* fixed하면 스크롤시 안움직이고 고정되어있음 */
+    /* background-attachment: fixed; */
+}
+
+.header {
+    height: 64px;
+    width: 100%;
+    background-color: yellow;
+    padding: 0 16px;
+
+    position: sticky;
+    flex-shrink: 0;
+    top: 0px;
+/* 
+    background-position: left center; */
+    background: url(../image/사계절배경.avif) no-repeat center center;
+    background-size: cover;
+
+}
+
+.content {
+    /* height 100% 로도 밑에 있는 main 에 width 와 같은 이유로 안됨 */
+    flex-grow: 1;
+    display: flex;
+}
+.aside {
+    background-color: white;
+    width: 48px;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+main {
+    /* transparent는 투명색 */
+    /* background-color: transparent; */
+    /* width 100%는 안된다 -> 부모의 크기를 다 갖겠다는 말인데 
+     그렇게 되면 aside 의 크기를 안줘버리게 되는 경우이기 때문에
+     화면 밖으로 나가게 되서 가로스크롤이 생기다던지 나중에 예외가 발생할 수 있음 */
+    /* flex-grow 로 현재 남아있는 여백에 대한 모든 크기만 주도록 설정 */
+    flex-grow: 1;
+    padding: 20px 20px;
+}
+
+
+.tool-bar {
+    height: auto;
+    width: 100%;
+    background-color: greenyellow;
+    padding: 0 16px;
+    bottom: 0;
+}
+
+.footer {
+    height: 100px;
+    background-color: white;
+
+    position: sticky;
+    flex-shrink: 0;
+}
+
+.elevated-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(0deg, #b074d8 25%, #ff61ab 100%);
+
+    /* 박스 위치 조정 */
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    /* 안에 컨텐츠 조정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+
+    overflow: auto;
+}

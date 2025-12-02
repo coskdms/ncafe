@@ -1,10 +1,23 @@
-/* heading */
-.heading {
-    font-weight: bold;
-    color: #494949;
+/* 변수 선언해서 공통으로 쓰기 */
+:root {
+    --heading-color: #494949;
+    --heading-size-1: 18px;
+    --heading-size-2: 14px;
+    --heading-size-3: 14px;
+    --heading-weight-1: bold;
+    --heading-weight-2: normal;
 }
 
+
+/* heading */
+/* 조합형 (이름을 조합해서 쓴다) */
+/* .heading {
+    font-weight: bold;
+    color: #494949;
+} */
+
 /* 공통 속성 사용하는 또 다른 방법 */
+/* 확장형 (필요한 이름을 계속해서 확장해서 쓴다)*/
 /* .heading\:1
 .heading\:2
 .heading\:3 {
@@ -13,13 +26,38 @@
 }  */
 
 .heading\:1 {
-    font-size: 18px;
+    font-size: var(--heading-size-1);
+    font-weight: var(--heading-weight-1);
+    color: var(--heading-color);
 }
 
 .heading\:2 {
-    font-size: 16px;
+    font-size: var(--heading-size-2);
+    font-weight: var(--heading-weight-2);
+    color: var(--heading-color);
 }
 
 .heading\:3 {
-    font-size: 18px;
+    font-size: var(--heading-size-3);
+    font-weight: var(--heading-weight-2);
+    color: var(--heading-color);
 }
+
+
+.n-icon::before {
+    font-family: "Material Symbols Outlined";
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon\:favorite::before {
+    content: "\e87d";
+}
+
+.icon\:settings::before {
+    content: "\e8b8";
+}
+

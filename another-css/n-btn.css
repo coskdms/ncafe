@@ -1,0 +1,44 @@
+.n-btn {
+    /* ----------상수변수-------------- */
+    --btn-height-1: 32px;
+    --btn-height-2: 40px;
+    --btn-height-3: 56px;
+    --btn-height-4: 96px;
+    --btn-height-5: 136px;
+    --btn-padding-1: 0 12px;
+    --btn-padding-2: 0 16px;
+    --btn-padding-3: 0 24px;
+    --btn-padding-4: 0 48px;
+    --btn-padding-5: 0 64px;
+    /* --------------변수---------------- */
+    --btn-color: var(--color-main-2);
+    --btn-size: var(--icon-size-1);
+    --btn-weight: 500;
+    --btn-height: var(--btn-height-2);
+    --btn-padding: var(--btn-padding-2);
+    --btn-fill: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .n-btn {
+        --btn-color: var(--color-main-1);
+    }
+}
+
+.n-btn {
+    /* boxing*/
+    height: var(--btn-height);
+    padding: var(--btn-padding);
+    border-radius: 40px;
+    border: 0px;
+    background-color: var(--btn-color);
+    /* content */
+    font-size: var(--btn-size);
+    font-weight: var(--btn-weight);
+    color: var(--color-base-1);
+    font-variation-settings: 'FILL' var(--btn-fill);
+
+    /* effect */
+    /* 1초동안 천천히 바뀔꺼에요 */
+    transition: background-color 1s, padding 1s, transform 1s ease;
+}

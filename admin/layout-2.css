@@ -84,6 +84,7 @@ body{
     height:100%;
     margin:0;
 }
+
 #root{
     background-color: #f8f8f8;
     width: 100%; /* 고정크기(cm, mm / px), 가변크기(em, rem, %, vw, vh)*/
@@ -91,6 +92,18 @@ body{
     display: flex;
     flex-direction: column;      
 }
+
+/* 
+media (내가 사용하는 화면)가 선호하는 색깔이 dark다. 
+그럼 나는 무슨색깔로 지정하겠다 라는 뜻 
+구글에서 설정 -> 모드 색 바꾸면 같이 바귐 
+*/
+@media (prefers-color-scheme: dark) {
+    #root {
+        background-color: #121212;
+    }
+}
+
 /* 공통 분모는 위에 */
 .header, 
 main{    
@@ -115,6 +128,8 @@ main{
     position: sticky; 
     top: 0;
 }
+
+
 .body{
     /* boxing */
     /* background-color: transparent;       */
@@ -123,6 +138,7 @@ main{
     display: flex;
     /* flex-direction: row; */
 }
+
 .aside{
     /* boxing */
     box-sizing: border-box;

@@ -1,0 +1,135 @@
+:root {
+    /* background 및 글씨 color */
+    --color-btn-1: #B8672E;
+    --color-btn-2: white;
+    --color-btn-3: #f0bf9c;
+    --color-btn-4: transparent;
+    --color-btn-5: #492911;
+
+    /* button shape */
+    --btn-shape-round: 999px;
+    --btn-shape-square-xs: 12px;
+    --btn-shape-square-s: 12px;
+    --btn-shape-square-m: 16px;
+    --btn-shape-square-l: 28px;
+    --btn-shape-square-xl: 28px;
+
+    /* btn height */
+    --btn-height-xs: 32px;
+    --btn-height-s: 40px;
+    --btn-height-m: 56px;
+    --btn-height-l: 96px;
+    --btn-height-xl: 136px;
+
+    /* btn padding */
+    --btn-padding-xs: 12px;
+    --btn-padding-s: 16px;
+    --btn-padding-m: 24px;
+    --btn-padding-l: 48px;
+    --btn-padding-xl: 64px;
+}
+
+/* 버튼에서 변화를 가질수 있는 옵션들을 변수로 선언 */
+.n-btn {
+    --btn-background-color: var(--color-btn-1);
+    --btn-color: var(--color-btn-5);
+    --btn-shape: var(--btn-shape-round);
+    --btn-height: var(--btn-height-s);
+    --btn-padding: var(--btn-padding-s);
+}
+
+/* 다크모드일 때 버튼의 색상을 변경 */
+@media (prefers-color-scheme: dark) {
+    .n-btn {
+        --btn-background-color: var(--color-btn-3);
+        --btn-color: var(--color-btn-2);
+    }
+}
+
+.n-btn {
+    /* 실제로 버튼 정의를 위한 스타일 코드를 작성 */
+    /* layout */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-background-color);
+
+    /* content */
+    color: var(--btn-color);
+    height: var(--btn-height);
+    padding: var(--btn-padding);
+    border: none;
+    border-radius: var(--btn-shape);
+}
+
+
+/* color */
+.n-btn\:filled {
+    /* --btn-background-color-1 : 디폴트갈색 */
+    --btn-background-color: var(--color-btn-1);
+    --btn-color: var(--color-btn-5);
+}
+.n-btn\:elevated {
+    /* --btn-background-color-2 : white */
+    --btn-background-color: var(--color-btn-5);
+    --btn-color: var(--color-btn-3);
+}
+.n-btn\:tonal {
+    /* --btn-background-color-2 : 연한 갈색 */
+    --btn-background-color: var(--color-btn-3);
+    --btn-color: var(--color-btn-2);
+}
+.n-btn\:outline {
+    /* --btn-background-color-2 : 투명 */
+    --btn-background-color: var(--color-btn-4);
+    --btn-color: var(--color-btn-5);
+    border: 1px solid var(--color-btn-5);
+}
+.n-btn\:text {
+    /* --btn-background-color-2 : 투명 */
+    --btn-background-color: var(--color-btn-4);
+    --btn-color: var(--color-btn-3);
+}
+
+
+/* shape */
+.n-btn\:shape-round {
+    --btn-shape: var(--btn-shape-round);
+}
+.n-btn\:shape-square-xs {
+    --btn-shape: var(--btn-shape-square-xs);
+}
+.n-btn\:shape-square-s {
+    --btn-shape: var(--btn-shape-square-s);
+}
+.n-btn\:shape-square-m {
+    --btn-shape: var(--btn-shape-square-m);
+}
+.n-btn\:shape-square-l {
+    --btn-shape: var(--btn-shape-square-l);
+}
+.n-btn\:shape-square-xl {
+    --btn-shape: var(--btn-shape-square-xl);
+}
+
+/* size */
+.n-btn\:size-xs {
+    --btn-height: var(--btn-height-xs);
+    --btn-padding: var(--btn-padding-xs);
+}
+.n-btn\:size-s {
+    --btn-height: var(--btn-height-s);
+    --btn-padding: var(--btn-padding-s);
+}
+.n-btn\:size-m {
+    --btn-height: var(--btn-height-m);
+    --btn-padding: var(--btn-padding-m);
+}
+.n-btn\:size-l {
+    --btn-height: var(--btn-height-l);
+    --btn-padding: var(--btn-padding-l);
+}
+.n-btn\:size-xl {
+    --btn-height: var(--btn-height-xl);
+    --btn-padding: var(--btn-padding-xl);
+}

@@ -1,0 +1,126 @@
+/* 
+    값들을 변수화 시켜서 관리한다. 
+    defalt로 사용될 값을 지정한다
+    모든 아이콘이 공통으로 물려받는 기본값
+    오직 .n-icon 컴포넌트 내부에서만 쓰는 지역 변수
+    1. font-size : --icon-size
+    2. color : --icon-color
+    3. font-weight : --icon-weight
+
+*/
+.n-icon {
+    --icon-type: "";
+    --icon-color: var(--color-base-9);
+    --icon-size: var(--icon-size-2);
+    --icon-weight: 400;
+    --icon-fill: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .n-icon {
+        /* 테마가 다크일때 이제 여기다가 위에꺼 스타일만 수정하면된다 */
+    }
+}
+
+/* 덮어써질때 최종적으로 렌더링되는 것 */
+.n-icon::before {
+    /* boxing */
+    /* width: 24px;
+    height: 24px; */
+
+    /* layout */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /* content */
+    font-family: "Material Symbols Outlined";
+    font-size: var(--icon-size);
+    color: var(--icon-color);
+    content: var(--icon-type);
+    font-weight: var(--icon-weight);
+    font-variation-settings: "FILL" var(--icon-fill);
+}
+
+.icon\:favorite::before {
+    --icon-type: "\e87d";
+}
+
+.icon\:settings::before {
+    --icon-type: "\e8b8";
+}
+
+/* color 관리 */
+.icon-color\:main-1::before {
+    --icon-color: var(--color-main-1);
+}
+
+.icon-color\:main-2::before {
+    --icon-color: var(--color-main-2);
+}
+
+.icon-color\:main-3::before {
+    --icon-color: var(--color-main-3);
+}
+
+.icon-color\:accent-1::before {
+    --icon-color: var(--color-accent-1);
+}
+
+
+/* 여기서 사용되는 구글 아이콘은 폰트이다 */
+.icon-size\:1::before {
+    --icon-size: var(--icon-size-1);
+}
+
+.icon-size\:2::before {
+    --icon-size: var(--icon-size-2);
+}
+
+.icon-size\:3::before {
+    --icon-size: var(--icon-size-3);
+}
+
+.icon-size\:4::before {
+    --icon-size: var(--icon-size-4);
+}
+
+/* weight 관리 , 숫자 뿐만 아니라 이름을 사용할 수 있다 */
+.icon-weight\:1::before {
+    --icon-weight: 100;
+}
+
+.icon-weight\:2::before,
+.icon-weight\:light::before {
+    --icon-weight: 200;
+}
+
+.icon-weight\:3::before {
+    --icon-weight: 300;
+}
+
+.icon-weight\:4::before,
+.icon-weight\:normal::before {
+    --icon-weight: 400;
+}
+
+.icon-weight\:5::before {
+    --icon-weight: 500;
+}
+
+.icon-weight\:6::before {
+    --icon-weight: 600;
+}
+
+.icon-weight\:7::before,
+.icon-weight\:bold::before {
+    --icon-weight: 700;
+}
+
+.icon-fill\:1::before {
+    --icon-fill: 1;
+}
+
+.icon-fill\:0::before {
+    --icon-fill: 0;
+}
